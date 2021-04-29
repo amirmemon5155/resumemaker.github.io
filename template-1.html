@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina&family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina&family=Noto+Sans+JP&family=Orelega+One&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&family=Poppins:wght@300&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="template-1.css">
+    
+    <title >template-1</title>
+    <link rel="icon" href="download.jpg" type="">  
+    
+    <!-- font awesome -->
+    
+</head>
+<body onload="myfun2()" onload="def()">
+    <div id="loader">
+
+    </div>
+    <div class="template-container" >
+        <div class="nav-bar">
+            <div class="brand">
+                <i class="fas fa-th"></i>
+                <span class="text-capitalize">resume maker</span>
+            </div>        
+            <ul >
+                <li class="nav-item"><a href="">templates</a></li>
+                <li><a href="">about project</a></li>
+            </ul>
+            <div class="loginContainer">
+                <a href="">log in</a>
+                <a href="">sign up</a>
+            </div>
+        </div>
+        
+        <nav style="">            
+            <div class="innerNavBar">                
+                        <div class="switchContainer">
+                            <!-- <div class="slider">
+                                <label for=""><input type="checkbox"></label>
+                            </div>                             -->
+                        </div>
+                        <div class="innerNavBarContainer ">
+                            <div>
+                                <a href="">publish</a>
+                                <i class="fas fa-file-upload ml-2" style="color: white;"></i>
+                            </div>                        
+                            <div>
+                                <a href="">view instruction</a>
+                                <i class="fas fa-info-circle ml-2" style="color: white;"></i>
+                            </div>    
+                            <div id="print-btn">
+                                <a >print as pdf</a>
+                                <i class="fas fa-file-download ml-2" style="color: white; "></i>
+                            </div>                    
+                        </div>
+                        
+            </div>
+            <div class="container nav-container">
+                <ul class="form-container-list">
+
+                    <!-----------------personal details start---------------------->
+
+                    <li class="form-container-list-item personal-detail-container " >
+                        <div class="d-flex py-3 px-3 first-div" id="0" onclick="myform(this.id)">                      
+                            <div class="d-flex">
+                              <span class="mr-2"><i class="fas fa-address-card"></i></span>
+                              <h6 class="">contact and address</h6>
+                            </div>                      
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
+                        </div>                           
+                        <div class="seconddiv p-2" style="display: none;">
+                            <div class="form-group fname  d-inline-block" style="width: 45% !important;" >
+                                <label for="">First Name:</label>
+                                <input name="fname" id="fname" type="text" placeholder="First Name" class="form-control" value="">
+                            </div>
+           
+                           <div class="form-group lname mx-2 d-inline-block" style="width: 45% !important;">
+                               <label for="">Last Name:</label>
+                               <input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control">
+                           </div>
+           
+                           <div class="form-group d-inline-block" style="width: 90% !important;">
+                               <label for="">phone number:</label>
+                               <input type="tel" name="pnum" id="pnum" placeholder="phone number" class="form-control">
+                           </div>                                      
+           
+                           <div class="form-group d-inline-block" style="width: 90% !important;">
+                               <label for="">email id:</label>
+                               <input type="email" name="email" id="email" placeholder="enter your email id" class="form-control">
+                           </div>
+           
+                           <div class="form-group d-inline-block" style="width: 100% !important;">
+                               <label for="">address:</label>
+                               <textarea name="address" id="address" cols="50" rows="4" class="form-control"></textarea>
+                           </div>                                                       
+                        
+                           <div class="form-group d-inline-block text-capitalize" style="width: 50% !important;">
+                               <label for="">city:</label>
+                               <input type="text" class="form-control" name="city" id="city">                               
+                           </div>
+                           <div class="form-group d-inline-block text-capitalize" style="width: 50% !important;">
+                                <label for="">country:</label>
+                                <input type="text" class="form-control" name="country" id="country">                               
+                            </div>
+                        </div>                                                
+                    </li>                    
+
+                    <!-----------------personal details end---------------------->
+
+                    <!-----------------objective section--------------------->
+
+                    <li class="form-container-list-item personal-detail-container ">
+                        
+                        <div class="d-flex py-3 px-3 first-div" id="1" onclick="myform(this.id)">                      
+                            <div class="d-flex">
+                              <span class="mr-2"><i class="fas fa-crosshairs"></i></i></span>
+                              <h6 class="">objective</h6>
+                            </div>                      
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
+                        </div>         
+
+                        <div class="seconddiv p-2" style="display: none;">
+                            <div class="form-group d-inline-block " style="width: 100% !important;">
+                                <label for="">write something about yourself:</label>                    
+                                <textarea name="objective" id="objective" cols="50" rows="5" class="form-control"></textarea>
+                            </div>     
+                        </div>                                                   
+                    </li>
+
+                    <li class="form-container-list-item personal-detail-container ">
+                        
+                        <div class="d-flex py-3 px-3 first-div" id="2" onclick="myform(this.id)">                      
+                            <div class="d-flex">
+                              <span class="mr-2"><i class="fas fa-user"></i></i></span>
+                              <h6 class="">personal details</h6>
+                            </div>                      
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
+                        </div>         
+
+                        <div class="seconddiv p-2" style="display: none;">
+                            <div class="form-group d-inline-block" style="width: 60% !important;">
+                                <label for="">DOB:</label>
+                                <input type="date" id="dob" placeholder="enter your DOB" class="form-control" value="">
+                            </div>
+                            <br>
+                            <div class="form-group d-inline-block" style="width: 60% !important;">
+                                <label for="">martial status</label>                                
+                                <input type="text" id="martial" name="martial" placeholder="" class="mx-1 form-control">                                 
+                            </div>
+
+
+                        </div>                                                   
+                    </li>
+
+                    <!-----------------objective section end--------------------->
+
+                    <!-----------------skills section start--------------------->
+
+                    <li class="form-container-list-item personal-detail-container ">
+                        
+                        <div class="d-flex py-3 px-3 first-div" id="3" onclick="myform(this.id)">                      
+                            <div class="d-flex">
+                              <span class="mr-2"><i class="fas fa-book-reader"></i></span>
+                              <h6 class="">soft skills</h6>
+                            </div>                      
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
+                        </div>         
+
+                        <div class="seconddiv p-2" style="display: none;">
+                            <div class="skill-container">
+                                <div class="skills">
+                                    <div class="form-group d-inline-block skill-input " style="width: 100% !important;">                                       
+                                        <div class=" d-flex " style="cursor: pointer;">
+                                           <input id="skill" type="text" name="skill1" placeholder="skill 1" class="form-control ">
+                                        </div>                                                                                    
+                                    </div>          
+                                </div>
+                                <div class="skill_btn_container incrBtnContainer">
+                                    <div class="skill_btn incrBtn" style="cursor: pointer;">
+                                        <span>Add <i class="fas fa-plus"></i></span>
+                                    </div>                                    
+                                </div>                                
+                            </div>
+                        </div>                                                   
+                    </li>
+
+                    <li class="form-container-list-item personal-detail-container ">
+                        
+                        <div class="d-flex py-3 px-3 first-div" id="4" onclick="myform(this.id)">                      
+                            <div class="d-flex">
+                              <span class="mr-2"><i class="fas fa-language"></i></span>
+                              <h6 class="">language</h6>
+                            </div>                      
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
+                        </div>         
+
+                        <div class="seconddiv p-2" style="display: none;">
+                            <div class="language-container">
+                                <div class="languages">
+                                    <div class="form-group d-inline-block language-input " style="width: 100% !important;">                                        
+                                        <div class=" d-flex " style="cursor: pointer;">
+                                           <input id="language" type="text" name="language" placeholder="language 1" class="form-control ">
+                                        </div>                                                                                    
+                                    </div>          
+                                </div>
+                                <div class="language_btn_container incrBtnContainer ">
+                                    <div class="language_btn incrBtn" style="cursor: pointer;">
+                                        <span>Add <i class="fas fa-plus"></i></span>
+                                    </div>                                    
+                                </div>                                
+                            </div>
+                        </div>                                                   
+                    </li>
+                </ul>
+                
+                <!-- ----------------------------customize template start----------------------------- -->
+
+                <ul id="nav-container-list">
+                    <div style="border-top: 1px solid #ddd;">
+                        <h6 class="text-center text-capitalize py-3">edit:-</h6>
+                    </div>
+                    <li class="nav-container-list-item" >
+                        <div class="d-flex py-3 px-3 first-div" id="0" onclick="myfun(this.id)">                    
+                          <div class="d-flex">
+                            <span class="mr-2"><i class="fas fa-paint-roller"></i></i></span>
+                            <h6 class="text-left text-capitalize  ">theme color</h6>
+                          </div>                          
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>
+                        </div>  
+                        <div class="seconddiv" id="seconddiv" style="display: none;">
+                            <div class="theme-container " >                    
+                                <form>
+                                    <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
+                                        <label>change color:-</label>
+                                        <input type="color" id="themecolor" name="headColor"  ><br>                                        
+                                        <button class="btn my-2 btn-primary" type="button" name="submit" id="themechange">change</button>
+                                        <button class="btn my-2 btn-primary" name="reset" type="submit">Reset</button>
+                                     </div>                    
+                                </form>                
+                            </div>
+                        </div>                         
+                    </li>
+                    <li class="nav-container-list-item" >                    
+                      <div class="d-flex py-3 px-3 first-div" id="1" onclick="myfun(this.id)">
+                          <div class="d-flex">
+                            <span class="mr-2"><i class="fas fa-text-height"></i></span>
+                            <h6 class="text-left text-capitalize  ">text</h6>
+                          </div>                          
+                          <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>
+                      </div>   
+                      <div class="seconddiv" id="seconddiv" style="display: none;">
+                         <div class="font-container ">                    
+                            <form method="POST" action="editor.php" >
+                              <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
+                                 <label for="">heading styles:</label>
+                                 <select value="" id="fontStyle" name="fontStyle" class="form-control text-capitalize" style="border:1px solid black;" >
+                                    <option value=" 'Roboto' , sans-serif " style="font-family: 'Roboto', sans-serif;">Roboto</option>
+                                    <option value=" 'Noto Sans JP' , sans-serif" style="font-family: 'Noto Sans JP', sans-serif;">Noto Sans JP</option>
+                                    <option value=" 'Karantina' , cursive" style="font-family: 'Karantina', cursive;">Karantina</option>
+                                    <option value=" 'Orelega One' , cursive" style="font-family: 'Orelega One', cursive;">Orelega One</option>                             
+                                    <option value=" 'Poppins', sans-serif" style="font-family: 'Poppins', sans-serif">Poppins</option>
+                                    <option value=" 'Ubuntu Mono', monospace" style="font-family: 'Ubuntu Mono', monospace;">Ubuntu Mono</option>
+                                    <option value=" 'Playfair Display', serif" style="font-family:  'Playfair Display', serif;">Playfair Display</option>                                
+                                    <option value=" 'Dancing Script', cursive" style="font-family:  'Dancing Script', cursive;">Dancing Script</option>                                                                
+                                 </select>
+                              </div>
+                              <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
+                                    <button class="btn my-2 btn-primary" type="submit" name="submitFonts">change</button>
+                                    <button class="btn my-2 btn-primary" name="resetFonts" type="submit">Reset</button>
+                              </div>
+                            </form>                    
+                        </div>
+                      </div> 
+                    </li>
+                    <li class="nav-container-list-item" >
+                      <div class="d-flex py-3 px-3 first-div" id="2" onclick="myfun(this.id)">                      
+                          <div class="d-flex">
+                            <span class="mr-2"><i class="fas fa-brush"></i></span>
+                            <h6 class="text-left text-capitalize  ">background</h6>
+                          </div>                      
+                          <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>
+                          
+                      </div>   
+                      <div class="seconddiv" id="seconddiv" style="display: none;">
+                          <div class="background-container">
+                                <form method="POST" action="editor.php">
+                                    <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
+                                        <label>change color:-</label>
+                                        <input type="color" id="bgcolor-box" name="bgColor" value="<?php echo $row2['bgcolor']; ?>"><br>                                        
+                                        <button class="btn my-4 btn-primary" type="submit" name="submitbg">change</button>
+                                        <button class="btn my-4 btn-primary" name="resetbg" type="submit">Reset</button>
+                                     </div>                    
+                                </form>                
+                          </div>     
+                      </div> 
+                    </li>            
+                    <li class="nav-container-list-item" >
+                      <div class="d-flex py-3 px-3 first-div" id="3" onclick="myfun(this.id)">
+                          <div class="d-flex">
+                            <span class="mr-2"><i class="fas fa-edit"></i></span>
+                            <h6 class="text-left text-capitalize  ">update</h6>
+                          </div>                      
+                          <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>
+                      </div>   
+                      <div class="seconddiv" id="seconddiv" style="display: none;">
+                          <div class="background-container">
+                                <form>
+                                    <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
+                                        <label>change color:-</label>
+                                        <input type="color" id="bgcolor-box" name="bgColor" id="bgColor" value=""><br>                                        
+                                        <button class="btn my-4 btn-primary" type="button" name="submitbg" id="submitbg">change</button>
+                                        <button class="btn my-4 btn-primary" name="resetbg" type="button">Reset</button>
+                                     </div>                    
+                                </form>                
+                          </div>     
+                      </div> 
+                    </li>            
+                </ul>            
+
+                <!-- ----------------------------customize template end----------------------------- -->
+
+
+            </div>
+        </nav>        
+    
+        
+    
+        <div class="resume-box shadow-lg" style=" " >
+            <header style="">
+                <div class="heading-container text-capitalize">
+                    <h1><span></span> <span></span></h1>
+                </div>
+            </header>        
+            <main class="">
+                <aside  class="mb-3" style="">                                    
+                    <div class="address-container">
+                        <h5 class="title pt-3">
+                            contact and address
+                        </h5>
+                        <ul class="contact-list-group text-left">
+                            <li class="contact-list-item d-flex ">                                
+                                <i class="fas fa-phone-alt "></i>
+                                <div>
+                                   <span id="phoneNumber"></span>
+                                </div>                            
+                            </li>
+                            <li class="contact-list-item d-flex">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                   <span id="emailBox"></span>
+                                </div>                            
+                            </li>
+                            <li class="contact-list-item d-flex" >
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                  <span class="address-field" id="addressBox" style="word-break: break-all;"></span><br>                                  
+                                </div>                            
+                            </li>
+                            <li class="contact-list-item d-flex" >
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>                                  
+                                  <span class="city" id="cityBox"></span>, <span class="country" id="countryBox"></span>
+                                </div>                            
+                            </li>
+                        </ul>                
+                        <div class="personal-detail-container">
+                            <h5 class="title pt-3">
+                                personal details
+                            </h5>
+                            <ul class="personal-list-group">
+                                <li class="personal-list-item">
+                                    DOB:- <span class="dob-field" id="dobBox"></span>
+                                </li>
+                                <li class="personal-list-item">
+                                    martial status:- <span class="martial-st-field" id="martialBox"></span>
+                                </li>
+                                
+                            </ul>    
+                        </div>
+                    </div>
+        
+                    <div class="skill-container">
+                        <h5 class="title">
+                            soft skills
+                        </h5>
+                        <ul class="skill-list-group">
+                            <!-- <li class="skill-list-item" id="skillBox"></li> -->
+                        </ul>
+                    </div>
+                                
+                    <div class="language-container">
+                        <h5 class="title">
+                            languages
+                        </h5>
+                        <ul class="language-list-group">
+                            <!-- <li class="language-list-item" id="languageBox"></li>                                         -->
+                        </ul>
+                    </div>
+        
+        
+                    
+                </aside>        
+        
+                <section class="main-section">
+                    
+                        <div class="objective-container">
+                            <h4 class="title">
+                                objective
+                            </h4>
+                            <p class="objective-field text-capitalize" id="objectiveBox"></p>
+                        </div>
+                    
+                        <div class="education-container">
+                            <h4 class="title">
+                                education
+                            </h4>
+                            <ul class="education-list-group">
+                                <li class="education-list-item">
+                                    <p class="course">BA in Network Administration</p>
+                                    <p class="schl-field">City University of New York</p>
+                                    <p class="year-field">2021</p>
+                                    <p class="grade-field">80 <span>%</span></p>
+                                </li>
+                            </ul>
+                            <hr>
+                            <ul class="education-list-group">
+                                <li class="education-list-item">
+                                    <p class="course">BA in Network Administration</p>
+                                    <p class="schl-field">City University of New York</p>
+                                    <p class="year-field">2021</p>
+                                    <p class="grade-field">80 <span>%</span></p>
+                                </li>
+                            </ul>
+                            <hr>
+                            <ul class="education-list-group">
+                                <li class="education-list-item">
+                                    <p class="course">BA in Network Administration</p>
+                                    <p class="schl-field">City University of New York</p>
+                                    <p class="year-field">2021</p>
+                                    <p class="grade-field">80 <span>%</span></p>
+                                </li>
+                            </ul>
+                        </div>                
+                        <div class="project-container">
+                            <h4 class="title">
+                                projects
+                            </h4>
+                            <ul class="project-list-group">
+                                <li class="project-list-item">
+                                    <h6 class="project-title py-1">[CAREER PROJECT HIGHLIGHTS]</h6>
+                                    <p class="project-detail ">Lorem ipsum dolor sit amet consectetur 
+                                        adipisicing elit. Rem hic dignissimos aperiam
+                                        at. Porro, est obcaecati. Qui tenetur dolores dolorem
+                                        omnis nisi maiores tempo</p>
+                                </li>                                        
+                            </ul>
+                            <ul class="project-list-group">
+                                <li class="project-list-item">
+                                    <h6 class="project-title py-1">[CAREER PROJECT HIGHLIGHTS]</h6>
+                                    <p class="project-detail ">Lorem ipsum dolor sit amet consectetur 
+                                        adipisicing elit. Rem hic dignissimos aperiam
+                                        at. Porro, est obcaecati. Qui tenetur dolores dolorem
+                                        omnis nisi maiores tempo</p>
+                                </li>                                        
+                            </ul>
+                        </div>
+        
+                        <div class="experiance-container">
+                            <h4 class="title">
+                                experiance
+                            </h4>
+                            <ul class="experiance-list-group">
+                                                                                                                            
+                                   <li class="experiance-list-item">
+                                       <h5 class="company-name py-1"></h5>
+                                        <p class="job-title "></p>
+                                        <p class="job-detail "></p>                               
+                                   </li>                                                                                                                              
+                            </ul>                    
+                        </div>
+        
+                </section>
+            </main>
+        
+    
+        </div>
+    </div>
+    
+    
+    <hr>
+    
+    <script src="template-1.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-------------html2pdf---------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js" integrity="sha512-ICHkAOXzVDEkL5xkXjAWRV/hx6Bq4ID/uhRcnj9zS7QCdCbhVtfgjwt/vTfUBtW1wzBkErImU0huK3LDVeEr8g==" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>
