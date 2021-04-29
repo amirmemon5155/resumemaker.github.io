@@ -264,7 +264,7 @@
                       </div>   
                       <div class="seconddiv" id="seconddiv" style="display: none;">
                          <div class="font-container ">                    
-                            <form method="POST" action="editor.php" >
+                            <form>
                               <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
                                  <label for="">heading styles:</label>
                                  <select value="" id="fontStyle" name="fontStyle" class="form-control text-capitalize" style="border:1px solid black;" >
@@ -297,10 +297,10 @@
                       </div>   
                       <div class="seconddiv" id="seconddiv" style="display: none;">
                           <div class="background-container">
-                                <form method="POST" action="editor.php">
+                                <form>
                                     <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
                                         <label>change color:-</label>
-                                        <input type="color" id="bgcolor-box" name="bgColor" value="<?php echo $row2['bgcolor']; ?>"><br>                                        
+                                        <input type="color" id="bgcolor-box" name="bgColor" value=""><br>                                        
                                         <button class="btn my-4 btn-primary" type="submit" name="submitbg">change</button>
                                         <button class="btn my-4 btn-primary" name="resetbg" type="submit">Reset</button>
                                      </div>                    
