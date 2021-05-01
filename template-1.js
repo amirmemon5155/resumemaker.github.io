@@ -223,7 +223,7 @@ document.querySelector('.education_btn_container .education_btn').addEventListen
     innode.style.width = '100%';    
           
     
-    var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
+    const Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
     <label for="">course/degree:</label>
     <input type="text" id="course" placeholder="E.g. BCA" class="form-control">
  </div>
@@ -268,7 +268,7 @@ var educationDoneBtn = (educ) => {
         document.querySelectorAll('#educationBox .courseBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #course')[educ].value;
         document.querySelectorAll('#educationBox .schlBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #university')[educ].value;
         document.querySelectorAll('#educationBox .yearBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #year')[educ].value;
-        document.querySelectorAll('#educationBox .gradeBox')[educ].innerHTML = `${document.querySelectorAll('.exam-container-item #grade')[educ].value} <span>%</span>`;
+        document.querySelectorAll('#educationBox .gradeBox')[educ].innerHTML = `${document.querySelectorAll('.exam-container-item #grade')[educ].value}<span>%</span>`;
         // skillk++;
     // }
 };
