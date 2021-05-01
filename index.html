@@ -16,7 +16,7 @@
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="bootstrap.min.css">
     <!-- css -->
     <link rel="stylesheet" href="template-1.css">
     
@@ -24,7 +24,7 @@
     <link rel="icon" href="download.jpg" type="">  
     
     <!-- font awesome -->
-    
+
 </head>
 <body onload="myfun2()" onload="def()">
     <div id="loader">
@@ -85,22 +85,22 @@
                         <div class="seconddiv p-2" style="display: none;">
                             <div class="form-group fname  d-inline-block" style="width: 45% !important;" >
                                 <label for="">First Name:</label>
-                                <input name="fname" id="fname" type="text" placeholder="First Name" class="form-control" value="">
+                                <input name="fname" id="fname" type="text" placeholder="E.g. fname" class="form-control" value="">
                             </div>
            
                            <div class="form-group lname mx-2 d-inline-block" style="width: 45% !important;">
                                <label for="">Last Name:</label>
-                               <input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control">
+                               <input type="text" name="lname" id="lname" placeholder="E.g. fname" class="form-control">
                            </div>
            
                            <div class="form-group d-inline-block" style="width: 90% !important;">
                                <label for="">phone number:</label>
-                               <input type="tel" name="pnum" id="pnum" placeholder="phone number" class="form-control">
+                               <input type="tel" name="pnum" id="pnum" placeholder="E.g. 9039xxxxxx" class="form-control">
                            </div>                                      
            
                            <div class="form-group d-inline-block" style="width: 90% !important;">
                                <label for="">email id:</label>
-                               <input type="email" name="email" id="email" placeholder="enter your email id" class="form-control">
+                               <input type="email" name="email" id="email" placeholder="E.g. xxx.@gmail.com" class="form-control">
                            </div>
            
                            <div class="form-group d-inline-block" style="width: 100% !important;">
@@ -110,11 +110,11 @@
                         
                            <div class="form-group d-inline-block text-capitalize" style="width: 50% !important;">
                                <label for="">city:</label>
-                               <input type="text" class="form-control" name="city" id="city">                               
+                               <input type="text" class="form-control" placeholder="E.g. indore" name="city" id="city">                               
                            </div>
                            <div class="form-group d-inline-block text-capitalize" style="width: 50% !important;">
                                 <label for="">country:</label>
-                                <input type="text" class="form-control" name="country" id="country">                               
+                                <input type="text" class="form-control" placeholder="E.g. india" name="country" id="country">                               
                             </div>
                         </div>                                                
                     </li>                    
@@ -136,7 +136,7 @@
                         <div class="seconddiv p-2" style="display: none;">
                             <div class="form-group d-inline-block " style="width: 100% !important;">
                                 <label for="">write something about yourself:</label>                    
-                                <textarea name="objective" id="objective" cols="50" rows="5" class="form-control"></textarea>
+                                <textarea name="objective" placeholder="E.g. Secure A Responsible Career Opportunity To Fully Utilize My Training And Skills, While Making A...." id="objective" cols="50" rows="5" class="form-control"></textarea>
                             </div>     
                         </div>                                                   
                     </li>
@@ -154,12 +154,12 @@
                         <div class="seconddiv p-2" style="display: none;">
                             <div class="form-group d-inline-block" style="width: 60% !important;">
                                 <label for="">DOB:</label>
-                                <input type="date" id="dob" placeholder="enter your DOB" class="form-control" value="">
+                                <input type="date" id="dob" placeholder="" class="form-control" value="">
                             </div>
                             <br>
                             <div class="form-group d-inline-block" style="width: 60% !important;">
                                 <label for="">martial status</label>                                
-                                <input type="text" id="martial" name="martial" placeholder="" class="mx-1 form-control">                                 
+                                <input type="text" id="martial" name="martial" placeholder="E.g. single" class="mx-1 form-control">                                 
                             </div>
 
 
@@ -225,6 +225,87 @@
                             </div>
                         </div>                                                   
                     </li>
+
+                    <li class="form-container-list-item personal-detail-container ">
+                        
+                        <div class="d-flex py-3 px-3 first-div" id="5" onclick="myform(this.id)">                      
+                            <div class="d-flex">
+                              <span class="mr-2"><i class="fas fa-book-reader"></i></span>
+                              <h6 class="">technical skills</h6>
+                            </div>                      
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
+                        </div>         
+
+                        <div class="seconddiv p-2" style="display: none;">
+                            <div class="tskill-container">
+                                <div class="tskills">
+                                    <div class="form-group d-inline-block skill-input " style="width: 100% !important;">                                       
+                                        <div class=" d-flex " style="cursor: pointer;">
+                                           <input id="tskill" type="text" name="tskill1" placeholder="skill 1" class="form-control ">
+                                        </div>                                                                                                                                                                                                               
+                                    </div>                                              
+                                    <div class="form-group d-inline-block " style="width: 50% !important;">
+                                        <label for="">experiance level</label>                            
+                                         <div class="d-flex " style="align-items: center;">
+                                            <input type="number" placeholder="E.g. 70" class="form-control " style="margin-right: 5px; "> <span>%</span>
+                                         </div>                                            
+                                    </div>                                                    
+                                </div>
+                                <div class="tskill_btn_container incrBtnContainer">
+                                    <div class="tskill_btn incrBtn" style="cursor: pointer;">
+                                        <span>Add <i class="fas fa-plus"></i></span>
+                                    </div>                                    
+                                </div>                                
+                            </div>
+                        </div>                                                   
+                    </li>   
+
+                    <li class="form-container-list-item personal-detail-container ">
+                        
+                        <div class="d-flex py-3 px-3 first-div" id="6" onclick="myform(this.id)">                      
+                            <div class="d-flex">
+                              <span class="mr-2"><i class="fas fa-book-reader"></i></span>
+                              <h6 class="">education</h6>
+                            </div>                      
+                            <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
+                        </div>         
+
+                        <div class="seconddiv p-2" style="display: none;">
+                            <div class="education-container-group">                                        
+                                <div class="exam-container-items"> 
+                                    <div class="exam-container-item">
+                                        <div class="form-group d-inline-block" style="width: 100% !important;">
+                                            <label for="">course/degree:</label>
+                                            <input type="text" id="course" placeholder="E.g. BCA" class="form-control">
+                                         </div>
+                                                                                                                 
+                                         <div class="form-group d-inline-block" style="width: 100% !important;">
+                                              <label for="">university/school:</label>
+                                              <input type="text" id="university" placeholder="E.g. DAVV" class="form-control ">                                                      
+                                         </div>
+ 
+                                         <div class="form-group d-inline-block " style="width: 50% !important;">
+                                             <label for="">year:</label>                               
+                                              <input type="text" id="year" min="0" placeholder="E.g. 2021" class="form-control ">                                                      
+                                          </div>  
+                                     
+                                         <div class="form-group d-inline-block " style="width: 50% !important;">
+                                             <label for="">percentage</label>                            
+                                              <div class="d-flex " style="align-items: center;">
+                                                 <input type="number" id="grade" placeholder="E.g. 70" class="form-control " style="margin-right: 5px; "> <span>%</span>
+                                              </div>                                                
+                                         </div>
+                                    </div>                                                                           
+                                </div>                                                                                                             
+                            </div> 
+                            <div class="education_btn_container incrBtnContainer">
+                                <div class="education_btn incrBtn" style="cursor: pointer;">
+                                    <span>Add <i class="fas fa-plus"></i></span>
+                                </div>                                    
+                            </div>                                
+                        </div>                                                   
+                    </li>
+
                 </ul>
                 
                 <!-- ----------------------------customize template start----------------------------- -->
@@ -264,7 +345,7 @@
                       </div>   
                       <div class="seconddiv" id="seconddiv" style="display: none;">
                          <div class="font-container ">                    
-                            <form>
+                            <form method="POST" action="editor.php" >
                               <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
                                  <label for="">heading styles:</label>
                                  <select value="" id="fontStyle" name="fontStyle" class="form-control text-capitalize" style="border:1px solid black;" >
@@ -300,7 +381,7 @@
                                 <form>
                                     <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
                                         <label>change color:-</label>
-                                        <input type="color" id="bgcolor-box" name="bgColor" value=""><br>                                        
+                                        <input type="color" id="bgcolor-box" name="bgColor" ><br>                                        
                                         <button class="btn my-4 btn-primary" type="submit" name="submitbg">change</button>
                                         <button class="btn my-4 btn-primary" name="resetbg" type="submit">Reset</button>
                                      </div>                    
@@ -321,7 +402,7 @@
                                 <form>
                                     <div class="form-group d-inline-block text-capitalize" style="width:100% !important;">
                                         <label>change color:-</label>
-                                        <input type="color" id="bgcolor-box" name="bgColor" id="bgColor" value=""><br>                                        
+                                        <input type="color"  name="bgColor" id="bgColor" ><br>                                        
                                         <button class="btn my-4 btn-primary" type="button" name="submitbg" id="submitbg">change</button>
                                         <button class="btn my-4 btn-primary" name="resetbg" type="button">Reset</button>
                                      </div>                    
@@ -410,8 +491,39 @@
                             <!-- <li class="language-list-item" id="languageBox"></li>                                         -->
                         </ul>
                     </div>
-        
-        
+                    
+                    <div class="language-container">
+                        <h5 class="title pb-4">
+                            technical skills
+                        </h5>
+                        <ul class="tskills-list-group">
+                            <li class="tskills-list-item" id="tskillsBox">
+                                <label>html</label>
+                                <div class="progress mb-4" style="height: 8px !important;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
+                                </div>
+                            </li>
+                            <li class="tskills-list-item" id="tskillsBox">
+                                <label>css</label>
+                                <div class="progress mb-4" style="height: 8px !important;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
+                                </div>
+                            </li>
+                            <li class="tskills-list-item" id="tskillsBox">
+                                <label>js</label>
+                                <div class="progress mb-4" style="height: 8px !important;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
+                                </div>
+                            </li>
+                            <li class="tskills-list-item" id="tskillsBox">
+                                <label>php</label>
+                                <div class="progress mb-4" style="height: 8px !important;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
                     
                 </aside>        
         
@@ -429,31 +541,13 @@
                                 education
                             </h4>
                             <ul class="education-list-group">
-                                <li class="education-list-item">
-                                    <p class="course">BA in Network Administration</p>
-                                    <p class="schl-field">City University of New York</p>
-                                    <p class="year-field">2021</p>
-                                    <p class="grade-field">80 <span>%</span></p>
-                                </li>
-                            </ul>
-                            <hr>
-                            <ul class="education-list-group">
-                                <li class="education-list-item">
-                                    <p class="course">BA in Network Administration</p>
-                                    <p class="schl-field">City University of New York</p>
-                                    <p class="year-field">2021</p>
-                                    <p class="grade-field">80 <span>%</span></p>
-                                </li>
-                            </ul>
-                            <hr>
-                            <ul class="education-list-group">
-                                <li class="education-list-item">
-                                    <p class="course">BA in Network Administration</p>
-                                    <p class="schl-field">City University of New York</p>
-                                    <p class="year-field">2021</p>
-                                    <p class="grade-field">80 <span>%</span></p>
-                                </li>
-                            </ul>
+                                <!-- <li class="education-list-item">
+                                    <p class="courseBox">BA in Network Administration</p>
+                                    <p class="schlBox">City University of New York</p>
+                                    <p class="yearBox py-2">2021</p>
+                                    <p class="gradeBox">80 <span>%</span></p>
+                                </li> -->
+                            </ul>                            
                         </div>                
                         <div class="project-container">
                             <h4 class="title">
