@@ -179,14 +179,14 @@
         
         .nav-bar{
             height: 70px;
-            padding: 15px 150px 15px 200px;
+            padding: 15px 100px 15px 100px;
             border-bottom: 1px solid #ddd;            
             position: fixed;
             top: 0;
             width: 100%;
             background-color: rgba(45,149,236,255);            
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
         }
         .nav-bar .brand{            
@@ -199,13 +199,14 @@
             letter-spacing: 1px;
             /* color: rgba(51, 49, 49, 0.644) !important; */
             color: white;
+            margin-right: auto;
         }
         .nav-bar ul{
             list-style: none;
             display: flex !important;
             /* border: 1px solid white; */
             margin: 0 !important;
-            margin-left: 600px;
+            
             justify-content: space-between !important;
             align-items: center;
             font-family: 'Roboto', sans-serif;
@@ -213,7 +214,7 @@
             
         }
         .nav-bar ul li{
-            margin: 0 15px;            
+            margin: 0 10px;            
         }
         .nav-bar ul li a{
             font-size: 18px;            
@@ -236,6 +237,7 @@
             display: flex;
             /* border: 1px solid white; */
             margin: 50px 0;
+            margin-left: 10px;
             font-family: 'Poppins', sans-serif;
         }
         .loginContainer a{
@@ -247,7 +249,7 @@
             border-bottom-right-radius: 20px;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            margin: 10px;
+            margin: 0px 10px;
             font-family: 'Roboto', sans-serif;
             text-decoration: none;
             text-transform: capitalize;
@@ -490,9 +492,15 @@ aside .language-container h5{
     
 }
 
-.main-section .education-container ul li .course{
+.main-section .education-container ul li .courseBox{
     font-size: 20px;
     font-weight: 600;
+    text-transform: capitalize;
+}
+
+.main-section .education-container ul li .schlBox
+{
+    color: #0074a5;
 }
 
 .main-section .education-container ul li p+p{
