@@ -215,6 +215,66 @@ var languageDoneBtn = (langk) => {
     // }
 };
 
+var educ = 0;
+
+document.querySelector('.education_btn_container .education_btn').addEventListener('click' , () =>{    
+    const innode = document.createElement('div');
+    innode.classList.add('exam-container-item');    
+    innode.style.width = '100%';    
+          
+    
+    var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
+    <label for="">course/degree:</label>
+    <input type="text" id="course" placeholder="E.g. BCA" class="form-control">
+ </div>
+                                                                         
+ <div class="form-group d-inline-block" style="width: 100% !important;">
+      <label for="">university/school:</label>
+      <input type="text" id="university" placeholder="E.g. DAVV" class="form-control ">                                                      
+ </div>
+
+ <div class="form-group d-inline-block " style="width: 50% !important;">
+     <label for="">year:</label>                               
+      <input type="text" id="year" min="0" placeholder="E.g. 2021" class="form-control ">                                                      
+  </div>  
+
+ <div class="form-group d-inline-block " style="width: 50% !important;">
+     <label for="">percentage</label>                            
+      <div class="d-flex " style="align-items: center;">
+         <input type="number" id="grade" placeholder="E.g. 70" class="form-control " style="margin-right: 5px; "> <span>%</span>
+      </div>                                                
+ </div> `;    
+    innode.insertAdjacentHTML('afterbegin', Content);
+    
+    document.querySelector('.exam-container-items').appendChild(innode);
+
+    educationDoneBtn(educ);
+    educ++;
+})
+
+var educationDoneBtn = (educ) => {
+    
+    // console.log(document.querySelectorAll('#language').length);
+    // while(skillk<document.querySelectorAll('#skill').length){
+        const skc = document.createElement('li');
+        skc.classList.add('education-list-item');
+        const content = `<p class="courseBox"></p>
+        <p class="schlBox"></p>
+        <p class="yearBox py-1"></p>
+        <p class="gradeBox"></p>`;
+        skc.id = `educationBox`;
+        skc.insertAdjacentHTML('afterbegin' , content);
+        document.querySelector('.education-list-group').appendChild(skc);
+        document.querySelectorAll('#educationBox .courseBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #course')[educ].value;
+        document.querySelectorAll('#educationBox .schlBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #university')[educ].value;
+        document.querySelectorAll('#educationBox .yearBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #year')[educ].value;
+        document.querySelectorAll('#educationBox .gradeBox')[educ].innerHTML = `${document.querySelectorAll('.exam-container-item #grade')[educ].value} <span>%</span>`;
+        // skillk++;
+    // }
+};
+
+
+
 document.querySelector("#themecolor").addEventListener('change' , () => {
     document.querySelector("header").style.background = document.querySelector("#themecolor").value;
     var h=0;
