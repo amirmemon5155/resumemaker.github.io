@@ -223,7 +223,7 @@ document.querySelector('.education_btn_container .education_btn').addEventListen
     innode.style.width = '100%';    
           
     
-    const Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
+    var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
     <label for="">course/degree:</label>
     <input type="text" id="course" placeholder="E.g. BCA" class="form-control">
  </div>
@@ -258,10 +258,16 @@ var educationDoneBtn = (educ) => {
     // while(skillk<document.querySelectorAll('#skill').length){
         const skc = document.createElement('li');
         skc.classList.add('education-list-item');
-        const content = `<p class="courseBox"></p>
-        <p class="schlBox"></p>
-        <p class="yearBox py-1"></p>
-        <p class="gradeBox"></p>`;
+        const content = `<div class="row" style="z-index: -111 !important;">
+            <div class="col-lg-3 col-md-3 col-sm-3" style="font-weight: bold;font-size: 18px;">
+                <p class="yearBox py-1 secondHeader"></p>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 text-left" style="font-weight: bold;font-size: 18px;padding: 0 !important;margin: 0">
+                <p class="courseBox"></p>
+                <p class="schlBox " ></p>        
+                <p class="gradeBox"></p>
+            </div>
+        </div>`;
         skc.id = `educationBox`;
         skc.insertAdjacentHTML('afterbegin' , content);
         document.querySelector('.education-list-group').appendChild(skc);
@@ -273,7 +279,103 @@ var educationDoneBtn = (educ) => {
     // }
 };
 
+var project = 0;
 
+document.querySelector('.project_btn_container .project_btn').addEventListener('click' , () =>{    
+    const innode = document.createElement('div');
+    innode.classList.add('project-container-item');    
+    innode.style.width = '100%';    
+          
+    
+    var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
+    <label for="">project name:</label>
+    <input type="text" id="projectName" placeholder="E.g. project name" class="form-control ">
+ </div>
+                                                                         
+ <div class="form-group d-inline-block" style="width: 100% !important;">
+      <label for="">project detail:</label>
+      <textarea name="objective" placeholder="E.g. project detail" id="projectDetail" cols="50" rows="5" class="form-control"></textarea>
+ </div> `;    
+    innode.insertAdjacentHTML('afterbegin', Content);
+    
+    document.querySelector('.project-container-items').appendChild(innode);
+
+    projectDoneBtn(project);
+    project++;
+})
+
+var projectDoneBtn = (project) => {
+    
+        const skc = document.createElement('li');
+        skc.classList.add('project-list-item');
+        const content = `<h6 class="projectNameBox py-1 secondHeader" id=""></h6>
+            <p class="projectDetailBox " id=""></p>`;
+        skc.id = `projectBox`;
+        skc.insertAdjacentHTML('afterbegin' , content);
+        document.querySelector('.project-list-group').appendChild(skc);
+        document.querySelectorAll('#projectBox .projectNameBox')[project].innerHTML = document.querySelectorAll('.project-container-item #projectName')[project].value;
+        document.querySelectorAll('#projectBox .projectDetailBox')[project].innerHTML = document.querySelectorAll('.project-container-item #projectDetail')[project].value;        
+    
+};
+
+var exp = 0;
+
+document.querySelector('.exp_btn_container .exp_btn').addEventListener('click' , () =>{    
+    const innode = document.createElement('div');
+    innode.classList.add('experiance-container-item');    
+    innode.style.width = '100%';                  
+    var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
+    <label for="">company name:</label>
+    <input type="text" id="companyName" placeholder="E.g. infotech" class="form-control">
+ </div>
+ <div class="form-group d-inline-block" style="width: 100% !important;">
+    <label for="">job title:</label>
+    <input type="text" id="jobTitle" placeholder="E.g. python developer" class="form-control">
+ </div>
+ <div class="d-flex">
+    <div class="form-group d-inline-block" style="width: 50% !important;">
+        <label for="">start date:</label>
+        <input type="text" id="startDate" min="0" placeholder="E.g. 2018" class="form-control">
+     </div>
+     <div class="form-group d-inline-block ml-3" style="width: 50% !important;">
+        <label for="">end date:</label>
+        <input type="text" id="endDate" min="0" placeholder="E.g. 2021" class="form-control">
+     </div>
+ </div>
+ <div class="form-group d-inline-block " style="width: 100% !important;">
+    <label for="">job detail:</label>                    
+    <textarea name="" id="jobDetail" cols="50" rows="4" class="form-control"></textarea>
+</div>`;    
+    innode.insertAdjacentHTML('afterbegin', Content);
+    
+    document.querySelector('.experiance-container-items').appendChild(innode);
+    expDoneBtn(exp);
+    exp++;
+})
+
+var expDoneBtn = (exp) => {
+    
+        const skc = document.createElement('li');
+        skc.classList.add('exp-list-item');
+        const content = `<div class="row" style="z-index: -111 !important;">
+        <div class="col-lg-3 col-md-3 col-sm-3" style="font-weight: bold;font-size: 18px;">
+            <p class="py-1 secondHeader"><span class="startYearBox"></span>-<span class="endYearBox"></span></p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-9" style="font-size: 18px;padding: 0 !important;margin: 0">
+            <h5 class="companyNameBox pb-2"></h5>
+            <p class="jobTitleBox py-0"></p>        
+            <p class="jobDetailBox"></p>
+        </div>
+        </div>`;
+        skc.id = `expBox`;
+        skc.insertAdjacentHTML('afterbegin' , content);
+        document.querySelector('.experiance-list-group').appendChild(skc);        
+        document.querySelectorAll('#expBox .startYearBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #startDate')[exp].value;
+        document.querySelectorAll('#expBox .endYearBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #endDate')[exp].value;        
+        document.querySelectorAll('#expBox .companyNameBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #companyName')[exp].value;
+        document.querySelectorAll('#expBox .jobTitleBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #jobTitle')[exp].value;
+        document.querySelectorAll('#expBox .jobDetailBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #jobDetail')[exp].value;            
+};
 
 document.querySelector("#themecolor").addEventListener('change' , () => {
     document.querySelector("header").style.background = document.querySelector("#themecolor").value;
@@ -294,3 +396,22 @@ document.querySelector("#themecolor").addEventListener('change' , () => {
 document.querySelector('body').addEventListener('load' , () => {
     
 }) 
+
+var chk = document.querySelector('#fr-checkbox');
+var xp = document.querySelector(".experiance-container-items");
+
+chk.addEventListener('click' , () =>{
+
+    if(chk.checked == true){
+        xp.style.display = 'none';
+        chk.value = 'fresher';
+    }
+    else
+       if(chk.checked == false){
+        xp.style.display = '';
+       }
+    
+    
+
+})
+

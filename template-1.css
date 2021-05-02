@@ -188,6 +188,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            z-index: 99999;
         }
         .nav-bar .brand{            
             font-family: 'Poppins', sans-serif;
@@ -356,9 +357,8 @@ header{
 aside{
     width: 35%;
     float: left;
-    /* height: 100vh; */
-    
-    /* border-right: 5px solid rgba(235,234,239,255); */
+    /* height: 100vh; */    
+    border-right: 5px solid rgba(235,234,239,255);
 }
 
 main .main-section{
@@ -388,6 +388,7 @@ aside .address-container{
     font-family: 'Roboto', sans-serif;
     text-transform: capitalize;   
     cursor: hand;
+    font-size: 19px;
 }
 aside .address-container h5{
     /* font-family: 'Poppins', sans-serif; */
@@ -425,8 +426,8 @@ aside .skill-container h5{
     
 }
 
-aside .skill-container p{
-    font-size: 20px;
+aside .skill-container ul li{
+    font-size: 19px !important;
 }
 
 /* aside .skill-container ul{
@@ -450,14 +451,17 @@ aside .language-container{
 
 aside .language-container h5{
     /* font-family: 'Poppins', sans-serif; */
-    padding: 1px 0;
+    /* padding: 1px 0; */
     /* font-size: 20px; */
     
+}
+aside .language-container ul li{
+    font-size: 19px;
 }
 
 .main-section{
     padding: 15px 10px;
-    border-left: 5px solid rgba(235,234,239,255);
+    /* border-left: 5px solid rgba(235,234,239,255); */
 }
 
 .main-section h4    {
@@ -500,15 +504,14 @@ aside .language-container h5{
 
 .main-section .education-container ul li .schlBox
 {
-    color: #0074a5;
+    
 }
 
 .main-section .education-container ul li p+p{
     font-size: 18px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
-    line-height: 10px;
-    
+    line-height: 10px;    
 }
 
 .main-section .project-container{
@@ -530,25 +533,39 @@ aside .language-container h5{
 
 .main-section .experiance-container{
     padding: 10px 10px;
-    /* border-bottom: 3px solid #ddd;*/
+    border-bottom: 3px solid #ddd;
     width: 90%;
     margin: auto;
     /* border: 1px solid black; */
     text-transform: capitalize;   
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
 }
+
+
 
 .main-section .experiance-container ul li p{
     font-size: 18px;
-    line-height: 23px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    /* line-height: 10px; */
+    /* border: 1px solid black; */
+    margin: 0px 0px 8px 0px;
 }
-
+.main-section .experiance-container ul li{
+    margin: 20px 0;
+}
 .main-section .experiance-container ul li .job-title{
     line-height: 10px;
     font-size: 20px;
+    /* border: 1px solid black; */
+    
 }
-.experiance-list-item h5{
-    font-size: 23px;
+.main-section .experiance-container ul li .companyNameBox{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    /* border: 1px solid black; */
+    
 }
 
 .incrBtnContainer{
@@ -568,3 +585,17 @@ aside .language-container h5{
 }
 
 
+.secondHeader{
+    color: #0074a5;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;   
+}
+
+.first-div{
+    text-transform: capitalize;
+}
+
+/* .education-list-group li{
+    border: 1px solid black;
+} */
