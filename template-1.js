@@ -22,7 +22,7 @@ fullName[0].innerHTML = "student";
 fullName[1].innerHTML = "name";    
 document.querySelector("#phoneNumber").innerHTML = "91-9999999999";
 document.querySelector("#emailBox").innerHTML = "xyz.xyz@gmail.com";
-document.querySelector("#objectiveBox").innerHTML = "Secure a responsible career opportunity to fully utilize my training and skills, while making a significant contribution to the success of the company.Seeking an entry-level position to begin my career in a high-level professional environment.";
+
 document.querySelector("#dobBox").innerHTML = "YYYY-MM-DD";
 };
 
