@@ -1,3 +1,4 @@
+var iframe = document.querySelector(".resume-box iframe");
 var fname = document.querySelector(".form-container-list-item .seconddiv #fname");
 var lname = document.querySelector(".form-container-list-item .seconddiv #lname");
 var fullName = document.querySelectorAll(".heading-container h1 span");
@@ -18,12 +19,7 @@ var skillList = document.querySelector(".skill-container .skill-list-group");
 var loader = document.getElementById('loader');
 var myfun2 = () =>{    
 loader.style.display= 'none';    
-fullName[0].innerHTML = "student";   
-fullName[1].innerHTML = "name";    
-document.querySelector("#phoneNumber").innerHTML = "91-9999999999";
-document.querySelector("#emailBox").innerHTML = "xyz.xyz@gmail.com";
 
-document.querySelector("#dobBox").innerHTML = "YYYY-MM-DD";
 };
 
 document.querySelector('#fontStyle').addEventListener('change' , () => {
@@ -128,20 +124,9 @@ martial.addEventListener('input',() => {
     document.querySelector("#martialBox").innerHTML = martial.value;
 });
 
-// document.querySelector(".nav-bar div").addEventListener('click' , ()=> {
 
-//     if(document.querySelector("nav").style.width == '25%'){
+var k=0;
 
-//         document.querySelector("nav").style.width='0%';
-
-//     }
-//     else{
-//         document.querySelector("nav").style.width='25%';   
-//     }
-// })    
-var k=1;
-var skillk=0;
-var skarr = new Array();
 sk.addEventListener('click' , () =>{
 
     
@@ -154,127 +139,136 @@ sk.addEventListener('click' , () =>{
     innode.classList.add('d-inline-block');
     innode.classList.add('form-group');
     innode.style.width = '100%';    
-    k++;        
-    
+           
+    k++; 
     var skillContent = `<div class=" d-flex " style="cursor: pointer;">
-    <input id="skill" type="text" name="skill${k}" placeholder="skill${k}" class="form-control ">                                                                                           
+    <input id="${k}" type="text" name="skill${k+1}" oninput="skillDoneBtn(this.id)" placeholder="skill${k+1}" class="form-control skillInput">
     </div>  `;    
     innode.insertAdjacentHTML('afterbegin', skillContent);
     
     skillCont.appendChild(innode);
 
-    skillDoneBtn(skillk);
-    skillk++;
+    const skc = document.createElement('li');
+        skc.classList.add('skill-list-item');
+        skc.classList.add('skillBox');    
+        document.querySelector('.skill-list-group').appendChild(skc);
+        
+    // skillDoneBtn(skillk);
+    
+    
 })
 
-// document.querySelector('#skillDoneBtn').addEventListener('click' , skillDoneBtn);
+
 var skillDoneBtn = (skillk) => {
     
-    console.log(document.querySelectorAll('#skill').length);
-    // while(skillk<document.querySelectorAll('#skill').length){
-        const skc = document.createElement('li');
-        skc.classList.add('skill-list-item');
-        skc.id = `skillBox`;    
-        document.querySelector('.skill-list-group').appendChild(skc);
-        document.querySelectorAll('#skillBox')[skillk].innerHTML = document.querySelectorAll('#skill')[skillk].value;        
-        // skillk++;
-    // }
+    // c onsole.log(document.querySelectorAll('#skill').length);
+        // console.log(skillk);
+        // const skc = document.createElement('li');
+        // skc.classList.add('skill-list-item');
+        // skc.id = `skillBox`;    
+        // document.querySelector('.skill-list-group').appendChild(skc);
+        document.querySelectorAll('.skillBox')[skillk].innerHTML = document.querySelectorAll('.skillInput')[skillk].value;
 };
 
 var langk = 0;
-var l=1;
+var l=0;
 document.querySelector('.language_btn_container .language_btn').addEventListener('click' , () =>{    
     const innode = document.createElement('div');
     innode.classList.add('language-input');
     innode.classList.add('d-inline-block');
     innode.classList.add('form-group');
     innode.style.width = '100%';    
-    l++;        
+    l++;
     
     var Content = `<div class=" d-flex " style="cursor: pointer;">
-    <input id="language" type="text" name="language${l}" placeholder="language${l}" class="form-control ">                                                                                           
+    <input id="${l}" oninput="languageDoneBtn(this.id)" type="text" name="language${l+1}" placeholder="language${l+1}" class="form-control language"> 
     </div>  `;    
     innode.insertAdjacentHTML('afterbegin', Content);
     
     document.querySelector('.languages').appendChild(innode);
 
-    languageDoneBtn(langk);
-    langk++;
+    const skc = document.createElement('li');
+    skc.classList.add('language-list-item');
+    skc.id = `languageBox`;    
+    document.querySelector('.language-list-group').appendChild(skc);
+            
+    // languageDoneBtn(langk);
+    // langk++;
 })
 
 var languageDoneBtn = (langk) => {
     
     // console.log(document.querySelectorAll('#language').length);
     // while(skillk<document.querySelectorAll('#skill').length){
-        const skc = document.createElement('li');
-        skc.classList.add('language-list-item');
-        skc.id = `languageBox`;    
-        document.querySelector('.language-list-group').appendChild(skc);
-        document.querySelectorAll('#languageBox')[langk].innerHTML = document.querySelectorAll('#language')[langk].value;
+        
+        document.querySelectorAll('#languageBox')[langk].innerHTML = document.querySelectorAll('.language-input .language')[langk].value;
         // skillk++;
     // }
 };
 
-var educ = 0;
+var e=0;
 
 document.querySelector('.education_btn_container .education_btn').addEventListener('click' , () =>{    
     const innode = document.createElement('div');
     innode.classList.add('exam-container-item');    
     innode.style.width = '100%';    
-          
-    
+    e++;      
     var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
     <label for="">course/degree:</label>
-    <input type="text" id="course" placeholder="E.g. BCA" class="form-control">
+    <input type="text" id="${e}" name="course${e}" oninput="educationDoneBtn(this.id)" placeholder="E.g. BCA" class="form-control course">
  </div>
                                                                          
  <div class="form-group d-inline-block" style="width: 100% !important;">
       <label for="">university/school:</label>
-      <input type="text" id="university" placeholder="E.g. DAVV" class="form-control ">                                                      
+      <input type="text" id="${e}" name="university${e}" oninput="educationDoneBtn(this.id)" placeholder="E.g. DAVV" class="form-control university">                                                      
  </div>
 
  <div class="form-group d-inline-block " style="width: 50% !important;">
      <label for="">year:</label>                               
-      <input type="text" id="year" min="0" placeholder="E.g. 2021" class="form-control ">                                                      
+      <input type="text" id="${e}" name="year${e}" oninput="educationDoneBtn(this.id)" min="0" placeholder="E.g. 2021" class="form-control year">                                                      
   </div>  
 
  <div class="form-group d-inline-block " style="width: 50% !important;">
      <label for="">percentage</label>                            
       <div class="d-flex " style="align-items: center;">
-         <input type="number" id="grade" placeholder="E.g. 70" class="form-control " style="margin-right: 5px; "> <span>%</span>
+         <input type="number" id="${e}" name="grade${e}" oninput="educationDoneBtn(this.id)" placeholder="E.g. 70" class="form-control grade" style="margin-right: 5px; "> <span>%</span>
       </div>                                                
  </div> `;    
     innode.insertAdjacentHTML('afterbegin', Content);
     
     document.querySelector('.exam-container-items').appendChild(innode);
 
-    educationDoneBtn(educ);
-    educ++;
+
+    const skc = document.createElement('li');
+        skc.classList.add('education-list-item');
+        
+        skc.id = `educationBox`;
+        skc.insertAdjacentHTML('afterbegin' , `<div class="row" style="z-index: -111 !important;">
+        <div class="col-lg-3 col-md-3 col-sm-3" style="font-weight: bold;font-size: 18px;">
+            <p class="yearBox py-1 secondHeader"></p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 text-left" style="font-weight: bold;font-size: 18px;padding: 0 !important;margin: 0">
+            <p class="courseBox"></p>
+            <p class="schlBox " ></p>        
+            <p class="gradeBox"></p>
+        </div>
+    </div>`);
+        document.querySelector('.education-list-group').appendChild(skc);
+
+
+    // educationDoneBtn(educ);
+    // educ++;
 })
 
 var educationDoneBtn = (educ) => {
     
     // console.log(document.querySelectorAll('#language').length);
     // while(skillk<document.querySelectorAll('#skill').length){
-        const skc = document.createElement('li');
-        skc.classList.add('education-list-item');
-        const content = `<div class="row" style="z-index: -111 !important;">
-            <div class="col-lg-3 col-md-3 col-sm-3" style="font-weight: bold;font-size: 18px;">
-                <p class="yearBox py-1 secondHeader"></p>
-            </div>
-            <div class="col-lg-9 col-md-9 col-sm-9 text-left" style="font-weight: bold;font-size: 18px;padding: 0 !important;margin: 0">
-                <p class="courseBox"></p>
-                <p class="schlBox " ></p>        
-                <p class="gradeBox"></p>
-            </div>
-        </div>`;
-        skc.id = `educationBox`;
-        skc.insertAdjacentHTML('afterbegin' , content);
-        document.querySelector('.education-list-group').appendChild(skc);
-        document.querySelectorAll('#educationBox .courseBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #course')[educ].value;
-        document.querySelectorAll('#educationBox .schlBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #university')[educ].value;
-        document.querySelectorAll('#educationBox .yearBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item #year')[educ].value;
-        document.querySelectorAll('#educationBox .gradeBox')[educ].innerHTML = `${document.querySelectorAll('.exam-container-item #grade')[educ].value}<span>%</span>`;
+        
+        document.querySelectorAll('#educationBox .courseBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item .course')[educ].value;
+        document.querySelectorAll('#educationBox .schlBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item .university')[educ].value;
+        document.querySelectorAll('#educationBox .yearBox')[educ].innerHTML = document.querySelectorAll('.exam-container-item .year')[educ].value;
+        document.querySelectorAll('#educationBox .gradeBox')[educ].innerHTML = `${document.querySelectorAll('.exam-container-item .grade')[educ].value}<span>%</span>`;
         // skillk++;
     // }
 };
@@ -285,79 +279,76 @@ document.querySelector('.project_btn_container .project_btn').addEventListener('
     const innode = document.createElement('div');
     innode.classList.add('project-container-item');    
     innode.style.width = '100%';    
-          
-    
+     project++;       
     var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
     <label for="">project name:</label>
-    <input type="text" id="projectName" placeholder="E.g. project name" class="form-control ">
+    <input type="text" id="${project}" oninput="projectDoneBtn(this.id)"  placeholder="E.g. project name" name="project${project}" class="form-control projectName">
  </div>
                                                                          
  <div class="form-group d-inline-block" style="width: 100% !important;">
       <label for="">project detail:</label>
-      <textarea name="objective" placeholder="E.g. project detail" id="projectDetail" cols="50" rows="5" class="form-control"></textarea>
+      <textarea name="objective" placeholder="E.g. project detail" id="${project}" oninput="projectDoneBtn(this.id)" cols="50" rows="5" class="form-control projectDetail"></textarea>
  </div> `;    
     innode.insertAdjacentHTML('afterbegin', Content);
     
     document.querySelector('.project-container-items').appendChild(innode);
 
-    projectDoneBtn(project);
-    project++;
-})
 
-var projectDoneBtn = (project) => {
-    
         const skc = document.createElement('li');
         skc.classList.add('project-list-item');
-        const content = `<h6 class="projectNameBox py-1 secondHeader" id=""></h6>
-            <p class="projectDetailBox " id=""></p>`;
+         
         skc.id = `projectBox`;
-        skc.insertAdjacentHTML('afterbegin' , content);
+        skc.insertAdjacentHTML('afterbegin' , `<h6 class="projectNameBox py-1 secondHeader" id=""></h6>
+        <p class="projectDetailBox " id=""></p>`);
         document.querySelector('.project-list-group').appendChild(skc);
-        document.querySelectorAll('#projectBox .projectNameBox')[project].innerHTML = document.querySelectorAll('.project-container-item #projectName')[project].value;
-        document.querySelectorAll('#projectBox .projectDetailBox')[project].innerHTML = document.querySelectorAll('.project-container-item #projectDetail')[project].value;        
+
+    // projectDoneBtn(project);
+    // project++;
+})
+
+var projectDoneBtn = (project1) => {
+            
+        document.querySelectorAll('#projectBox .projectNameBox')[project1].innerHTML = document.querySelectorAll('.project-container-item .projectName')[project1].value;
+        document.querySelectorAll('#projectBox .projectDetailBox')[project1].innerHTML = document.querySelectorAll('.project-container-item .projectDetail')[project1].value;        
     
 };
 
 var exp = 0;
-
 document.querySelector('.exp_btn_container .exp_btn').addEventListener('click' , () =>{    
     const innode = document.createElement('div');
     innode.classList.add('experiance-container-item');    
-    innode.style.width = '100%';                  
+    innode.style.width = '100%';   
+    exp++;               
     var Content = `<hr> <div class="form-group d-inline-block" style="width: 100% !important;">
     <label for="">company name:</label>
-    <input type="text" id="companyName" placeholder="E.g. infotech" class="form-control">
+    <input type="text" id="${exp}" oninput="expDoneBtn(this.id)" placeholder="E.g. infotech" class="form-control companyName">
  </div>
  <div class="form-group d-inline-block" style="width: 100% !important;">
     <label for="">job title:</label>
-    <input type="text" id="jobTitle" placeholder="E.g. python developer" class="form-control">
+    <input type="text" id="${exp}" oninput="expDoneBtn(this.id)" placeholder="E.g. python developer" class="form-control jobTitle">
  </div>
  <div class="d-flex">
     <div class="form-group d-inline-block" style="width: 50% !important;">
         <label for="">start date:</label>
-        <input type="text" id="startDate" min="0" placeholder="E.g. 2018" class="form-control">
+        <input type="text" id="${exp}" oninput="expDoneBtn(this.id)" min="0" placeholder="E.g. 2018" class="form-control startDate">
      </div>
      <div class="form-group d-inline-block ml-3" style="width: 50% !important;">
         <label for="">end date:</label>
-        <input type="text" id="endDate" min="0" placeholder="E.g. 2021" class="form-control">
+        <input type="text" id="${exp}" oninput="expDoneBtn(this.id)" min="0" placeholder="E.g. 2021" class="form-control endDate">
      </div>
  </div>
  <div class="form-group d-inline-block " style="width: 100% !important;">
     <label for="">job detail:</label>                    
-    <textarea name="" id="jobDetail" cols="50" rows="4" class="form-control"></textarea>
+    <textarea name="" id="${exp}" oninput="expDoneBtn(this.id)" cols="50" rows="4" class="form-control jobDetail"></textarea>
 </div>`;    
-    innode.insertAdjacentHTML('afterbegin', Content);
-    
+    innode.insertAdjacentHTML('afterbegin', Content);    
     document.querySelector('.experiance-container-items').appendChild(innode);
-    expDoneBtn(exp);
-    exp++;
-})
 
-var expDoneBtn = (exp) => {
-    
-        const skc = document.createElement('li');
+    const skc = document.createElement('li');
         skc.classList.add('exp-list-item');
-        const content = `<div class="row" style="z-index: -111 !important;">
+        
+        skc.id = `expBox`;
+        skc.insertAdjacentHTML('afterbegin' , `<div class="row" style="z-index: -111 !important;">
         <div class="col-lg-3 col-md-3 col-sm-3" style="font-weight: bold;font-size: 18px;">
             <p class="py-1 secondHeader"><span class="startYearBox"></span>-<span class="endYearBox"></span></p>
         </div>
@@ -366,18 +357,68 @@ var expDoneBtn = (exp) => {
             <p class="jobTitleBox py-0"></p>        
             <p class="jobDetailBox"></p>
         </div>
-        </div>`;
-        skc.id = `expBox`;
-        skc.insertAdjacentHTML('afterbegin' , content);
+        </div>`);
         document.querySelector('.experiance-list-group').appendChild(skc);        
-        document.querySelectorAll('#expBox .startYearBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #startDate')[exp].value;
-        document.querySelectorAll('#expBox .endYearBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #endDate')[exp].value;        
-        document.querySelectorAll('#expBox .companyNameBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #companyName')[exp].value;
-        document.querySelectorAll('#expBox .jobTitleBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #jobTitle')[exp].value;
-        document.querySelectorAll('#expBox .jobDetailBox')[exp].innerHTML = document.querySelectorAll('.experiance-container-item #jobDetail')[exp].value;            
+
+    // expDoneBtn(exp);
+    // exp++;
+})
+
+var expDoneBtn = (exp1) => {
+    
+        
+        document.querySelectorAll('#expBox .startYearBox')[exp1].innerHTML = document.querySelectorAll('.experiance-container-item .startDate')[exp1].value;
+        document.querySelectorAll('#expBox .endYearBox')[exp1].innerHTML = document.querySelectorAll('.experiance-container-item .endDate')[exp1].value;        
+        document.querySelectorAll('#expBox .companyNameBox')[exp1].innerHTML = document.querySelectorAll('.experiance-container-item .companyName')[exp1].value;
+        document.querySelectorAll('#expBox .jobTitleBox')[exp1].innerHTML = document.querySelectorAll('.experiance-container-item .jobTitle')[exp1].value;
+        document.querySelectorAll('#expBox .jobDetailBox')[exp1].innerHTML = document.querySelectorAll('.experiance-container-item .jobDetail')[exp1].value;            
 };
 
-document.querySelector("#themecolor").addEventListener('change' , () => {
+var tskill = 0;
+document.querySelector('.tskill_btn_container .tskill_btn').addEventListener('click' , () =>{    
+    const innode = document.createElement('div');
+    innode.classList.add('tskill');    
+    innode.style.width = '100%';                  
+
+    tskill++;
+    var Content = `<hr> <div class="form-group d-inline-block skill-input " style="width: 100% !important;">                                       
+    <div class=" d-flex " style="cursor: pointer;">
+       <input id="${tskill}" oninput="tskillDoneBtn(this.id)" type="text" name="tskill1" placeholder="skill 1" class="form-control tskillName">
+    </div>                                                                                                                                                                                                               
+</div>                                              
+<div class="form-group d-inline-block " style="width: 50% !important;">
+    <label for="">experiance level</label>                            
+     <div class="d-flex " style="align-items: center;">
+        <input type="number" id="${tskill}" oninput="tskillDoneBtn(this.id)" placeholder="E.g. 70" class="form-control expLevel" style="margin-right: 5px; "><span>%</span>
+     </div>                                            
+</div>`;    
+    innode.insertAdjacentHTML('afterbegin', Content);    
+    document.querySelector('.tskill-container').appendChild(innode);
+
+    
+    const skc = document.createElement('li');
+    skc.classList.add('tskills-list-item');    
+    skc.id = `tskillsBox`;
+    skc.insertAdjacentHTML('afterbegin' , `<label class="tskillNameBox"></label>
+    <div class="progress mb-4" style="height: 8px !important;">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%;background: #0074a5;"></div>
+    </div>`);
+    document.querySelector('.tskills-list-group').appendChild(skc);        
+
+    // tskillDoneBtn(tskill);
+    // tskill++;
+})
+
+var tskillDoneBtn = (tskill1) => {
+        var xpl = document.querySelectorAll('.tskill .expLevel')[tskill1].value;    
+        document.querySelectorAll('.tskills-list-item .tskillNameBox')[tskill1].innerHTML = document.querySelectorAll('.tskill .tskillName')[tskill1].value;
+        document.querySelectorAll('.tskills-list-item .progress-bar')[tskill1].style.width = `${xpl}%`;
+        
+};
+
+
+
+document.querySelector("#themechange").addEventListener('click' , () => {
     document.querySelector("header").style.background = document.querySelector("#themecolor").value;
     var h=0;
     while(h<(document.querySelectorAll(".main-section h4").length)){
@@ -389,7 +430,16 @@ document.querySelector("#themecolor").addEventListener('change' , () => {
         document.querySelectorAll("aside h5")[h].style.color = document.querySelector("#themecolor").value;
         h++;
     }
-    
+    h=0;
+    while(h<(document.querySelectorAll(".secondHeader").length)){
+        document.querySelectorAll(".secondHeader")[h].style.color = document.querySelector("#themecolor").value;
+        h++;
+    }    
+    h=0;
+    while(h<(document.querySelectorAll(".progress-bar").length)){
+        document.querySelectorAll(".progress-bar")[h].style.background = document.querySelector("#themecolor").value;
+        h++;
+    }    
     // document.querySelectorAll("h5").style.color = document.querySelector("#themecolor").value;
 })
 
@@ -410,8 +460,5 @@ chk.addEventListener('click' , () =>{
        if(chk.checked == false){
         xp.style.display = '';
        }
-    
-    
-
 })
 

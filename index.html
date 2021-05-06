@@ -23,7 +23,8 @@
     <title >template-1</title>
     <link rel="icon" href="download.jpg" type="">  
     
-    <!-- font awesome -->
+    <meta name="description" content="Online resume maker. create resume in 5 minutes.">
+	<meta name="keywords" content="resume,cv,resume maker,cv maker,creator,generator,bca projects,bca projects,github resume maker, github project">
 
 </head>
 <body onload="myfun2()" onload="def()">
@@ -54,6 +55,11 @@
                             </div>                             -->
                         </div>
                         <div class="innerNavBarContainer ">
+                            <div>
+                                <a href="">Add Sections</a>
+                                <i class="fas fa-plus ml-2" style="color: white;"></i>
+                                
+                            </div>    
                             <div>
                                 <a href="">publish</a>
                                 <i class="fas fa-file-upload ml-2" style="color: white;"></i>
@@ -185,7 +191,7 @@
                                 <div class="skills">
                                     <div class="form-group d-inline-block skill-input " style="width: 100% !important;">                                       
                                         <div class=" d-flex " style="cursor: pointer;">
-                                           <input id="skill" type="text" name="skill1" placeholder="skill 1" class="form-control ">
+                                           <input id="0" type="text" name="skill1" placeholder="skill 1" class="form-control skillInput" oninput="skillDoneBtn(this.id)">
                                         </div>                                                                                    
                                     </div>          
                                 </div>
@@ -213,7 +219,7 @@
                                 <div class="languages">
                                     <div class="form-group d-inline-block language-input " style="width: 100% !important;">                                        
                                         <div class=" d-flex " style="cursor: pointer;">
-                                           <input id="language" type="text" name="language" placeholder="language 1" class="form-control ">
+                                           <input id="0" oninput="languageDoneBtn(this.id)" type="text" name="language" placeholder="language 1" class="form-control language">
                                         </div>                                                                                    
                                     </div>          
                                 </div>
@@ -238,25 +244,25 @@
 
                         <div class="seconddiv p-2" style="display: none;">
                             <div class="tskill-container">
-                                <div class="tskills">
+                                <div class="tskill">
                                     <div class="form-group d-inline-block skill-input " style="width: 100% !important;">                                       
                                         <div class=" d-flex " style="cursor: pointer;">
-                                           <input id="tskill" type="text" name="tskill1" placeholder="skill 1" class="form-control ">
+                                           <input id="0" oninput="tskillDoneBtn(this.id)" type="text" name="tskill1" placeholder="skill 1" class="form-control tskillName">
                                         </div>                                                                                                                                                                                                               
                                     </div>                                              
                                     <div class="form-group d-inline-block " style="width: 50% !important;">
                                         <label for="">experiance level</label>                            
                                          <div class="d-flex " style="align-items: center;">
-                                            <input type="number" placeholder="E.g. 70" class="form-control " style="margin-right: 5px; "> <span>%</span>
+                                            <input type="number" id="0" oninput="tskillDoneBtn(this.id)" autocomplete="no"  name="tskillLevel1"  placeholder="E.g. 70" class="form-control expLevel" style="margin-right: 5px; " min="0" max="100"><span>%</span>
                                          </div>                                            
-                                    </div>                                                    
+                                    </div>                                    
                                 </div>
+                            </div>    
                                 <div class="tskill_btn_container incrBtnContainer">
                                     <div class="tskill_btn incrBtn" style="cursor: pointer;">
                                         <span>Add <i class="fas fa-plus"></i></span>
                                     </div>                                    
-                                </div>                                
-                            </div>
+                                </div>                                                            
                         </div>                                                   
                     </li>   
 
@@ -264,7 +270,7 @@
                         
                         <div class="d-flex py-3 px-3 first-div" id="6" onclick="myform(this.id)">                      
                             <div class="d-flex">
-                              <span class="mr-2"><i class="fas fa-book-reader"></i></span>
+                              <span class="mr-2"><i class="fas fa-book-open"></i></span>
                               <h6 class="">education</h6>
                             </div>                      
                             <span class="arrow-icon"><i class="fas fa-angle-down"></i></span>                            
@@ -276,23 +282,23 @@
                                     <div class="exam-container-item">
                                         <div class="form-group d-inline-block" style="width: 100% !important;">
                                             <label for="">course/degree:</label>
-                                            <input type="text" id="course" placeholder="E.g. BCA" class="form-control">
+                                            <input type="text" id="0" name="course0" oninput="educationDoneBtn(this.id)" placeholder="E.g. BCA" class="form-control course">
                                          </div>
                                                                                                                  
                                          <div class="form-group d-inline-block" style="width: 100% !important;">
                                               <label for="">university/school:</label>
-                                              <input type="text" id="university" placeholder="E.g. DAVV" class="form-control ">                                                      
+                                              <input type="text" id="0" name="university0" oninput="educationDoneBtn(this.id)" placeholder="E.g. DAVV" class="form-control university">                                                      
                                          </div>
  
                                          <div class="form-group d-inline-block " style="width: 50% !important;">
                                              <label for="">year:</label>                               
-                                              <input type="text" id="year" min="0" placeholder="E.g. 2021" class="form-control ">                                                      
+                                              <input type="text" id="0" name="year0" oninput="educationDoneBtn(this.id)" min="0" placeholder="E.g. 2021" class="form-control year">                                                      
                                           </div>  
                                      
                                          <div class="form-group d-inline-block " style="width: 50% !important;">
                                              <label for="">percentage</label>                            
                                               <div class="d-flex " style="align-items: center;">
-                                                 <input type="number" id="grade" placeholder="E.g. 70" class="form-control " style="margin-right: 5px; "> <span>%</span>
+                                                 <input type="number" id="0" name="grade0" oninput="educationDoneBtn(this.id)" placeholder="E.g. 70" class="form-control grade" style="margin-right: 5px; "> <span>%</span>
                                               </div>                                                
                                          </div>
                                     </div>                                                                           
@@ -321,13 +327,14 @@
                                     <div class="project-container-item">
                                         <div class="form-group d-inline-block" style="width: 100% !important;">
                                             <label for="">project name:</label>
-                                            <input type="text" id="projectName" placeholder="E.g. project name" class="form-control">
-                                         </div>
-                                                                                                                 
-                                         <div class="form-group d-inline-block" style="width: 100% !important;">
-                                              <label for="">project detail:</label>
-                                              <textarea name="objective" placeholder="E.g. project detail" id="projectDetail" cols="50" rows="5" class="form-control"></textarea>
-                                         </div>
+                                            <input type="text" id="0" name="project0" oninput="projectDoneBtn(this.id)"  placeholder="E.g. project name" class="form-control projectName">
+                                        </div>
+                                                                         
+                                        <div class="form-group d-inline-block" style="width: 100% !important;">
+                                            <label for="">project detail:</label>
+                                            <textarea name="objective" placeholder="E.g. project detail" id="0" oninput="projectDoneBtn(this.id)" cols="50" rows="5" class="form-control projectDetail"></textarea>
+                                        </div> 
+                                        
                                     </div>                                                                           
                                 </div>                                                                                                                                         
                             <div class="project_btn_container incrBtnContainer">
@@ -358,26 +365,26 @@
                                     <div class="experiance-container-item">
                                         <div class="form-group d-inline-block" style="width: 100% !important;">
                                             <label for="">company name:</label>
-                                            <input type="text" id="companyName" placeholder="E.g. infotech" class="form-control">
+                                            <input type="text" id="0" oninput="expDoneBtn(this.id)" placeholder="E.g. infotech" class="form-control companyName">
                                          </div>
                                          <div class="form-group d-inline-block" style="width: 100% !important;">
                                             <label for="">job title:</label>
-                                            <input type="text" id="jobTitle" placeholder="E.g. python developer" class="form-control">
+                                            <input type="text" id="0" oninput="expDoneBtn(this.id)" placeholder="E.g. python developer" class="form-control jobTitle">
                                          </div>
                                          <div class="d-flex">
                                             <div class="form-group d-inline-block" style="width: 50% !important;">
                                                 <label for="">start date:</label>
-                                                <input type="text" id="startDate" min="0" placeholder="E.g. 2018" class="form-control">
+                                                <input type="text" id="0" oninput="expDoneBtn(this.id)" min="0" placeholder="E.g. 2018" class="form-control startDate">
                                              </div>
                                              <div class="form-group d-inline-block ml-3" style="width: 50% !important;">
                                                 <label for="">end date:</label>
-                                                <input type="text" id="endDate" min="0" placeholder="E.g. 2021" class="form-control">
+                                                <input type="text" id="0" oninput="expDoneBtn(this.id)" min="0" placeholder="E.g. 2021" class="form-control endDate">
                                              </div>
                                          </div>
                                          <div class="form-group d-inline-block " style="width: 100% !important;">
-                                            <label for="">job description:</label>                    
-                                            <textarea name="" id="jobDetail" cols="50" rows="4" class="form-control"></textarea>
-                                        </div>     
+                                            <label for="">job detail:</label>                    
+                                            <textarea name="" id="0" oninput="expDoneBtn(this.id)" cols="50" rows="4" class="form-control jobDetail"></textarea>
+                                        </div>    
                                     </div>                                                                           
                                 </div>                                                                                                                                         
                             <div class="exp_btn_container incrBtnContainer">
@@ -498,10 +505,8 @@
 
 
             </div>
-        </nav>        
-    
-        
-    
+        </nav>             
+
         <div class="resume-box shadow-lg" style=" " >
             <header style="">
                 <div class="heading-container text-capitalize">
@@ -510,7 +515,7 @@
             </header>        
             <main class="my-3">
                 <aside  class="mb-3" style="">                                    
-                    <div class="address-container" >
+                    <div class="address-container borderContainer" >
                         <h5 class="title pt-3">
                             contact and address
                         </h5>
@@ -556,53 +561,35 @@
                         </div>
                     </div>
         
-                    <div class="skill-container">
+                    <div class="skill-container borderContainer">
                         <h5 class="title">
                             soft skills
                         </h5>
                         <ul class="skill-list-group">
-                            <!-- <li class="skill-list-item" id="skillBox"></li> -->
+                            <li class="skill-list-item skillBox" id=""></li>
                         </ul>
                     </div>
                                 
-                    <div class="language-container">
+                    <div class="language-container borderContainer">
                         <h5 class="title">
                             languages
                         </h5>
                         <ul class="language-list-group">
-                            <!-- <li class="language-list-item" id="languageBox"></li>                                         -->
+                            <li class="language-list-item" id="languageBox"></li>                                        
                         </ul>
                     </div>
                     
-                    <div class="language-container">
+                    <div class="borderContainer">
                         <h5 class="title pb-4">
                             technical skills
                         </h5>
                         <ul class="tskills-list-group">
                             <li class="tskills-list-item" id="tskillsBox">
-                                <label>html</label>
+                                <label class="tskillNameBox"></label>
                                 <div class="progress mb-4" style="height: 8px !important;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%;background: #0074a5;"></div>
                                 </div>
-                            </li>
-                            <li class="tskills-list-item" id="tskillsBox">
-                                <label>css</label>
-                                <div class="progress mb-4" style="height: 8px !important;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
-                                </div>
-                            </li>
-                            <li class="tskills-list-item" id="tskillsBox">
-                                <label>js</label>
-                                <div class="progress mb-4" style="height: 8px !important;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
-                                </div>
-                            </li>
-                            <li class="tskills-list-item" id="tskillsBox">
-                                <label>php</label>
-                                <div class="progress mb-4" style="height: 8px !important;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%;background: #0074a5;"></div>
-                                </div>
-                            </li>
+                            </li>                           
                         </ul>
                     </div>
                     
@@ -611,64 +598,73 @@
         
                 <section class="main-section">
                     
-                        <div class="objective-container">
+                        <div class="objective-container borderContainer">
                             <h4 class="title">
                                 objective
                             </h4>
                             <p class="objective-field text-capitalize" id="objectiveBox"></p>
                         </div>
                     
-                        <div class="education-container">
+                        <div class="education-container borderContainer">
                             <h4 class="title">
                                 education
                             </h4>
                             <ul class="education-list-group">
-                                
+                                <li class="education-list-item" id="educationBox">
+                                    <div class="row" style="z-index: -111 !important;">
+                                        <div class="col-lg-3 col-md-3 col-sm-3" style="font-weight: bold;font-size: 18px;">
+                                            <p class="yearBox py-1 secondHeader"></p>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 text-left" style="font-weight: bold;font-size: 18px;padding: 0 !important;margin: 0">
+                                            <p class="courseBox"></p>
+                                            <p class="schlBox " ></p>        
+                                            <p class="gradeBox"></p>
+                                        </div>
+                                    </div>
+                                </li>                                
                             </ul>                            
                         </div>                
-                        <div class="project-container">
+                        <div class="project-container borderContainer">
                             <h4 class="title">
                                 projects
                             </h4>
                             <ul class="project-list-group">
-                                
+                                <li class="project-list-item" id="projectBox">
+                                    <h6 class="projectNameBox py-1 secondHeader" id=""></h6>
+                                    <p class="projectDetailBox " id=""></p>
+                                </li>   
                             </ul>                            
                         </div>
         
-                        <div class="experiance-container">
+                        <div class="experiance-container borderContainer">
                             <h4 class="title">
                                 experiance
                             </h4>
                             <ul class="experiance-list-group">                                                                                                                                                               
-                                <!-- <li>
+                                <li class="exp-list-item" id="expBox">
                                     <div class="row" style="z-index: -111 !important;">
                                         <div class="col-lg-3 col-md-3 col-sm-3" style="font-weight: bold;font-size: 18px;">
-                                            <p class="py-1 secondHeader"><span class="startYearBox">2005</span>-<span class="endYearBox">2009</span></p>
+                                            <p class="py-1 secondHeader"><span class="startYearBox"></span>-<span class="endYearBox"></span></p>
                                         </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9 text-left" style="font-size: 18px;padding: 0 !important;margin: 0">
-                                            <h5 class="companyNameBox pb-2">infosys</h5>
-                                            <p class="jobTitleBox py-0">developer</p>        
-                                            <p class="jobDetailBox">Worked passionately in customer service in a high-volume restaurant.
-                                                Completed the F.A.S.T. customer service training class.
-                                                Maintained a high tip average thanks to consistent customer satisfactionlume restaurant.
-                                                Completed the F.A.S.T. customer service training class.
-                                                Maintained a high tip average thanks to consistent customer satisfaction.</p>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-9" style="font-size: 18px;padding: 0 !important;margin: 0">
+                                            <h5 class="companyNameBox pb-2"></h5>
+                                            <p class="jobTitleBox py-0"></p>        
+                                            <p class="jobDetailBox"></p>
                                         </div>
                                     </div>
-                                </li> -->
+                                </li>
                             </ul>                    
                         </div>
         
                 </section>
-            </main>
-        
+            </main>            
+        </div>    
+    </div>    
+   
     
-        </div>
-    </div>
     
     
-    <hr>
-    
+
     <script src="template-1.js"></script>
 
     <!-- bootstrap js -->

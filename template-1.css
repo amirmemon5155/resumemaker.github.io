@@ -10,7 +10,9 @@
     
 }
 
-
+html{
+    scroll-behavior: smooth;
+}
 
 .template-container{
     width: 100%;
@@ -18,6 +20,7 @@
 }
     .resume-box{
         width: 65%;
+        
         overflow: hidden;
         float: right;
         margin: 150px ;
@@ -25,15 +28,16 @@
         
         /* border: 1px solid black; */
     }
+    .resume-box iframe{
+        height: 100vh;
+    }
 
-        header{
-            background: #0074a5;
-            
-        }
+    header{
+          background: #0074a5;            
+    }
         
-
         aside h5{
-            color: #000000;            
+            color: #0074a5;            
             font-family: 'Poppins', sans-serif;
             padding: 3px 0;
             font-size: 23px;
@@ -44,7 +48,7 @@
         }
 
         .main-section h4 {
-            color: black;                       
+            color: #0074a5;
             font-family: 'Poppins', sans-serif;
             padding: 1px 0;
             font-size: 30px;
@@ -357,8 +361,9 @@ header{
 aside{
     width: 35%;
     float: left;
+    height: 100%;
     /* height: 100vh; */    
-    border-right: 5px solid rgba(235,234,239,255);
+    /* border-right: 5px solid rgba(235,234,239,255); */
 }
 
 main .main-section{
@@ -458,10 +463,12 @@ aside .language-container h5{
 aside .language-container ul li{
     font-size: 19px;
 }
-
+.aside .borderContainer:last-child{
+    border: none;
+}
 .main-section{
     padding: 15px 10px;
-    /* border-left: 5px solid rgba(235,234,239,255); */
+    border-left: 5px solid rgba(235,234,239,255);
 }
 
 .main-section h4    {
@@ -471,7 +478,9 @@ aside .language-container ul li{
     text-transform: capitalize;
     
 }
-
+.main-section .borderContainer:last-child{
+    border: none;
+}
 .main-section .objective-container{
     padding: 10px 10px;
     border-bottom: 3px solid #ddd;        
@@ -587,9 +596,9 @@ aside .language-container ul li{
 
 .secondHeader{
     color: #0074a5;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;   
+    /* font-family: 'Roboto', sans-serif;    */
 }
 
 .first-div{
@@ -599,3 +608,18 @@ aside .language-container ul li{
 /* .education-list-group li{
     border: 1px solid black;
 } */
+
+.borderContainer{
+    padding: 10px 30px;
+    /* border-bottom: 3px solid #ddd;     */
+    width: 90%;
+    margin: auto;     
+    /* font-family: 'Roboto', sans-serif; */
+    text-transform: capitalize;   
+}
+.borderContainer li{
+    font-size: 18px;
+    font-weight: 500;
+    /* font-family: 'Roboto', sans-serif; */
+    /* word-break: break-all; */
+}
