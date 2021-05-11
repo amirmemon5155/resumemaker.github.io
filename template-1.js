@@ -16,11 +16,7 @@ var skillCont = document.querySelector('.skills');
 var skillList = document.querySelector(".skill-container .skill-list-group");
 
 
-var loader = document.getElementById('loader');
-var myfun2 = () =>{    
-loader.style.display= 'none';    
 
-};
 
 document.querySelector('#fontStyle').addEventListener('change' , () => {
     var x = document.querySelector('#fontStyle').options;            
@@ -443,6 +439,15 @@ document.querySelector("#themechange").addEventListener('click' , () => {
     // document.querySelectorAll("h5").style.color = document.querySelector("#themecolor").value;
 })
 
+
+document.querySelector("#bgChange").addEventListener('click' , () => {
+    document.querySelector(".resume-box").style.background = document.querySelector("#bgcolorBox").value;
+    
+})
+
+
+
+
 document.querySelector('body').addEventListener('load' , () => {
     
 }) 
@@ -453,7 +458,7 @@ var xp = document.querySelector(".experiance-container-items");
 chk.addEventListener('click' , () =>{
 
     if(chk.checked == true){
-        xp.style.display = 'none';
+        xp.style.display = 'none';        
         chk.value = 'fresher';
     }
     else
@@ -461,4 +466,104 @@ chk.addEventListener('click' , () =>{
         xp.style.display = '';
        }
 })
+var sectionAdd = (id) => {
+    var section = document.querySelectorAll('.sectionContainerItems input');
+            switch(id){
+                case '0':
+                    if(section[id].checked == true ){
+                        document.querySelector('.objective-container').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.objective-container').style.display ='none';
+                    }
+                    break;
 
+                case '1':
+                    if(section[id].checked == true ){
+                        document.querySelector('.experiance-container').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.experiance-container').style.display ='none';
+                    }
+                    break;
+                case '2':
+                    if(section[id].checked == true ){
+                        document.querySelector('.project-container').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.project-container').style.display ='none';
+                    }
+                    break;
+                case '3':
+                    if(section[id].checked == true ){
+                        document.querySelector('.education-container').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.education-container').style.display ='none';
+                    }
+                    break;
+                case '4':
+                    if(section[id].checked == true ){
+                        document.querySelector('.address-container').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.address-container').style.display ='none';
+                    }
+                    break;
+                case '5':
+                    if(section[id].checked == true ){
+                        document.querySelector('.personalDetailContainer').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.personalDetailContainer').style.display ='none';
+                    }
+                    break;
+                case '6':
+                    if(section[id].checked == true ){
+                        document.querySelector('.skillContainer').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.skillContainer').style.display ='none';
+                    }
+                    break;
+                case '7':
+                    if(section[id].checked == true ){
+                        document.querySelector('.languageContainer').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.languageContainer').style.display ='none';
+                    }
+                    break;   
+                case '8':
+                    if(section[id].checked == true ){
+                        document.querySelector('.tskillContainer').style.display ='';
+                    }                    
+                    else{
+                        document.querySelector('.tskillContainer').style.display ='none';
+                    }
+                    break;                 
+            }
+            
+    
+}
+
+var showSectionContainer = () => {    
+    if(document.querySelector(".sectionContainer").style.display=="none"){
+        
+        document.querySelector(".sectionContainer").style.display='';
+    }
+    else{
+        document.querySelector(".sectionContainer").style.display = "none";
+    }
+    
+}
+
+var showtemplatesContainer = () =>{
+    if(document.querySelector(".templatesContainer").style.display=="none"){
+        
+        document.querySelector(".templatesContainer").style.display='';
+    }
+    else{
+        document.querySelector(".templatesContainer").style.display = "none";
+    }
+}
