@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 var iframe = document.querySelector(".resume-box iframe");
 var fname = document.querySelector(".form-container-list-item .seconddiv #fname");
 var lname = document.querySelector(".form-container-list-item .seconddiv #lname");
@@ -38,10 +39,14 @@ document.querySelector('#print-btn').addEventListener('click' , () => {
     // document.querySelector('.resume-box').style.margin = '70px auto';
     // document.querySelector('.resume-box').style.width = '74%';
 
-    var backup = document.body.innerHTML;
-    var divcontent = document.querySelector('.resume-box').innerHTML;
-    document.body.innerHTML = divcontent;
-    window.print(); 
+    // var backup = document.body.innerHTML;
+    //var divcontent = document.querySelector('.resume-box').innerHTML;
+    const resumeElement = document.querySelector('.resume-box');
+    html2pdf()
+                .from(resumeElement)
+                .save("resume.pdf");
+    // document.body.innerHTML = divcontent;
+    // window.print(); 
     // document.body.innerHTML = backup;    
 });
 
